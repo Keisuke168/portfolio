@@ -3,6 +3,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { useState, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
+import { Text3D } from '@react-three/drei'
 
 const Box = () => {
   const ref = useRef(null);
