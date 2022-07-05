@@ -1,0 +1,32 @@
+.bg {
+    position: fixed;
+    width:100vw;
+    height: 100vh;
+    background-color: black;
+    z-index: 5;
+}
+
+.wrap {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.text {
+  position: absolute;
+  display: flex;
+  overflow: hidden;
+  line-height: 1;
+  z-index: 999;
+}
+
+.text span {
+  font-size: 8vw;
+  font-weight: 500;
+  transform: translateY(100%);
+  color: #fff;
+}
