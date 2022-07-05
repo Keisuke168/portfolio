@@ -1,9 +1,10 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Text3D } from '@react-three/drei'
+import { gsap } from "gsap";
+
+import styles from '../styles/Home.module.css';
+import Opening from '../component/opening';
+
 
 const Box = () => {
   const ref = useRef(null);
@@ -29,13 +30,13 @@ const Box = () => {
 export default function Home() {
   return (
     <div className={styles.container}>
-    <Canvas dpr={2}>
-      <color attach="background" args={[0xf5f3fd]} />
-      <ambientLight intensity={0.5} />
-      <directionalLight intensity={0.5} position={[-10, 10, 10]} />
-      <Box />
-    </Canvas>
-    <h1>Keisuke Yoshimi</h1>
+      <Opening/>
+      <Canvas dpr={2} className={styles.canvas}>
+        <color attach="background" args={[0xf5f3fd]} />
+        <ambientLight intensity={0.5} />
+        <directionalLight intensity={0.5} position={[-10, 10, 10]} />
+        <Box />
+      </Canvas>
     </div>
   )
 }
