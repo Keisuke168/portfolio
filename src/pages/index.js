@@ -11,9 +11,9 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 6]}}>
-        <ambientLight intensity={1} />
+        <ambientLight/>
         <RefractSphere />
-        <OrbitControls />
+        {/* <OrbitControls /> */}
       </Canvas>
       {/* <UnderLay /> */}
     </div>

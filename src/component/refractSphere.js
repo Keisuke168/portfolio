@@ -75,7 +75,7 @@ const RefractSphere = () => {
       <Center position={[0,0, -5]} rotation={[-0.3, 0.4, 0.07]}>
         <Text3D 
           ref={transelated} 
-          bevelEnabled
+          // bevelEnabled
           curveSegments={32}
           bevelSize={0.11}
           bevelThickness={0.1}
@@ -84,7 +84,7 @@ const RefractSphere = () => {
           font="./fonts/hina.json" 
         >
           {` HELLO！\nI'm Keisuke Yoshimi`}
-          <meshStandardMaterial color='#89ffff'/>
+          <meshStandardMaterial color='#7fffff'/>
         </Text3D>
       </Center>
 
@@ -92,7 +92,7 @@ const RefractSphere = () => {
       <Center position={[0,0,-5]} rotation={[-0.3, 0.4, 0.07]}>
         <Text3D 
           ref={text} 
-          bevelEnabled
+          // bevelEnabled
           curveSegments={32}
           bevelSize={0.11}
           bevelThickness={0.1}
@@ -101,7 +101,7 @@ const RefractSphere = () => {
           font="./fonts/hina.json" 
         >
           {`こんにちは!\n私は吉見圭祐です`}
-          <meshStandardMaterial color='#89ffff' />
+          <meshStandardMaterial color='#7fffff' />
         </Text3D>
       </Center>
     </>
