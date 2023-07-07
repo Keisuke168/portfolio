@@ -6,7 +6,7 @@ import * as THREE from "three";
 import refractVertexShader from "../shader/vertexShader";
 import refractFragmentShader from "../shader/fragmentShader";
 
-const RefractSphere = () => {
+const RefractSphere = ({ fontColor = '#DAFFFB'} ) => {
   // const url = require('./zen.json')
   const mesh = useRef(null);
   const text = useRef(null);
@@ -71,7 +71,7 @@ const RefractSphere = () => {
           font="./fonts/hina.json" 
         >
           {` HELLO！\nWelcome to my portfolio!`}
-          <meshStandardMaterial color='white'/>
+          <meshStandardMaterial color={fontColor}/>
         </Text3D>
       </Center>
 
@@ -89,7 +89,7 @@ const RefractSphere = () => {
           font="./fonts/hina.json" 
         >
           {`こんにちは!\n私のportforioへようこそ！`}
-          <meshStandardMaterial color='white' />
+          <meshStandardMaterial color={fontColor} />
         </Text3D>
       </Center>
     </>

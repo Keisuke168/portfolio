@@ -14,10 +14,10 @@ export default function Home() {
     <div className={styles.container}>
       <Meta />
       <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 6]}}>
-        <color attach="background" args={['#101020']} />
-        <ambientLight/>
-        <DashLine />
-        <RefractSphere />
+        <color attach="background" args={['#9AC5F4']} />
+        <ambientLight intensity={5}/>
+        <DashLine colors={['#99DBF5', '#A7ECEE']}/>
+        <RefractSphere fontColor="#FFEEBB"/>
         {/* <OrbitControls /> */}
       </Canvas>
     </div>

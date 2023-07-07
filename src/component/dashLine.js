@@ -5,9 +5,9 @@ import { MeshLineGeometry, MeshLineMaterial } from "meshline";
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 
-const DashLine = () => (
+const DashLine = ({ colors=['#176B87', '#64CCC5'] }) => (
     <>
-        <Lines count={15} dash={0.3} width={0.8} colors={['#ff0055', '#0099ff', '#cc00ff']} />
+        <Lines count={15} dash={0.3} width={0.8} colors={colors} />
     </>
 )
 

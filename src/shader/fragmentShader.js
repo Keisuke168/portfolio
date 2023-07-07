@@ -7,7 +7,7 @@ const refractFragmentShader = `
 
     const int LOOP = 16;
     const float uChromaticAberration = 0.1;
-    const float intensity = 1.05;
+    const float intensity = 1.0;
 
     vec3 sat(vec3 rgb, float intensity) {
         vec3 L = vec3(0.2125, 0.7154, 0.0721);
