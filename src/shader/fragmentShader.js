@@ -1,6 +1,7 @@
 const refractFragmentShader = `
     uniform vec2 winResolution;
     uniform sampler2D uTexture;
+    uniform vec3 uLight;
 
     varying vec3 worldNormal;
     varying vec3 eyeVector;
@@ -8,12 +9,28 @@ const refractFragmentShader = `
     const int LOOP = 16;
     const float uChromaticAberration = 0.1;
     const float intensity = 1.0;
+    const float uShininess = 60.0;
+    const float uDiffuseness = 0.20;
 
     vec3 sat(vec3 rgb, float intensity) {
         vec3 L = vec3(0.2125, 0.7154, 0.0721);
         vec3 grayscale = vec3(dot(rgb, L));
         return mix(grayscale, rgb, intensity);
     }
+
+    float specular(vec3 light, float shininess, float diffuseness) {
+        vec3 normal = worldNormal;
+        vec3 lightVector = normalize(-light);
+        vec3 halfVector = normalize(eyeVector + lightVector);
+      
+        float NdotL = dot(normal, lightVector);
+        float NdotH =  dot(normal, halfVector);
+        float kDiffuse = max(0.0, NdotL);
+        float NdotH2 = NdotH * NdotH;
+      
+        float kSpecular = pow(NdotH2, shininess);
+        return  kSpecular + kDiffuse * diffuseness;
+      }
 
     void main(){
         // 各色の屈折率
@@ -42,6 +59,10 @@ const refractFragmentShader = `
             color = sat(color, intensity);
         }
         color /= float(LOOP);
+
+        // 鏡面反射
+        float specularLight = specular(uLight, uShininess, uDiffuseness);
+        color += specularLight;
 
         gl_FragColor = vec4(color, 1.0);
     }

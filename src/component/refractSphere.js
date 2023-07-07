@@ -15,6 +15,7 @@ const RefractSphere = ({ fontColor = '#DAFFFB'} ) => {
   const { viewport } = useThree();
 
   const uniforms = useMemo(() => ({
+    uLight : { value: new THREE.Vector3(2.0, 2.0, 1.0) },
     u_time: { value: 0 },
     uTexture: { value: null },
     winResolution: { value: new THREE.Vector2(
@@ -28,7 +29,8 @@ const RefractSphere = ({ fontColor = '#DAFFFB'} ) => {
 
     const x = mouse.x * viewport.width / 2;
     const y = mouse.y * viewport.height / 2;
-    mesh.current.position.set(x, y, 0);
+    const newPos = mesh.current.position.lerp(new THREE.Vector3(x, y, 0), 0.08);
+    mesh.current.position.set(newPos.x, newPos.y, 0);
 
     text.current.visible = true;
     transelated.current.visible = false;
