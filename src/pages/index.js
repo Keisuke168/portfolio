@@ -16,7 +16,7 @@ export default function Home() {
         <ambientLight/>
         <DashLine />
         <RefractSphere />
-        <OrbitControls />
+        {/* <OrbitControls /> */}
       </Canvas>
     </div>
   )
