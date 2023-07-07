@@ -50,18 +50,6 @@ const RefractSphere = () => {
   const rows = [-7.5, -5, -2.5, 0, 2.5, 5, 7.5];
   return (
     <>
-      <color attach="background" args={["white"]} />
-      <group>
-        {columns.map((col, i) =>
-          rows.map((row, j) => (
-            <mesh position={[col, row, -8]}>
-              <icosahedronGeometry args={[0.5, 8]} />
-              <meshStandardMaterial color="white" />
-            </mesh>
-          ))
-        )}
-      </group>
-
       <mesh ref={mesh}>
         <icosahedronGeometry args={[2, 20]} />
         <shaderMaterial
@@ -71,36 +59,37 @@ const RefractSphere = () => {
         />
       </mesh> 
 
-      <Center position={[0,0, -5]} rotation={[-0.3, 0.4, 0.07]}>
+      <Center position={[1,-1, -7]} rotation={[-0.3, 0.6, 0.07]}>
         <Text3D 
           ref={transelated} 
-          // bevelEnabled
+          bevelEnabled
           curveSegments={32}
-          bevelSize={0.11}
+          bevelSize={0.04}
           bevelThickness={0.1}
           height={0.01}
           size={1.8} 
           font="./fonts/hina.json" 
         >
-          {` HELLO！\nI'm Keisuke Yoshimi`}
-          <meshStandardMaterial color='#7fffff'/>
+          {` HELLO！\nWelcome to my portfolio!`}
+          <meshStandardMaterial color='white'/>
         </Text3D>
       </Center>
 
 
-      <Center position={[0,0,-5]} rotation={[-0.3, 0.4, 0.07]}>
+      <Center position={[1,-1,-7]} rotation={[-0.3, 0.6, 0.07]}>
         <Text3D 
           ref={text} 
-          // bevelEnabled
+          bevelEnabled
           curveSegments={32}
-          bevelSize={0.11}
+          bevelSize={0.04}
           bevelThickness={0.1}
           height={0.01}
           size={1.8}  
+          letterSpacing={-0.2}
           font="./fonts/hina.json" 
         >
-          {`こんにちは!\n私は吉見圭祐です`}
-          <meshStandardMaterial color='#7fffff' />
+          {`こんにちは!\n私のportforioへようこそ！`}
+          <meshStandardMaterial color='white' />
         </Text3D>
       </Center>
     </>
