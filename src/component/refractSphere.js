@@ -2,7 +2,6 @@ import {  useRef, useMemo } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import { useFBO, Html, Text, Text3D, Center } from "@react-three/drei";
 import * as THREE from "three";
-import { FontLoader  } from "three/examples/jsm/loaders/FontLoader.js";
 
 import refractVertexShader from "../shader/vertexShader";
 import refractFragmentShader from "../shader/fragmentShader";
