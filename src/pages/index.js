@@ -2,7 +2,6 @@ import { Canvas  } from "@react-three/fiber";
 
 // import styles from '../styles/Home.module.css';
 import RefractSphere from "../component/refractSphere";
-import UnderLay from "../component/underlay";
 
 import styles from "../styles/Home.module.css";
 
@@ -14,7 +13,6 @@ export default function Home() {
         <RefractSphere />
         {/* <OrbitControls /> */}
       </Canvas>
-      {/* <UnderLay /> */}
     </div>
   )
 }
