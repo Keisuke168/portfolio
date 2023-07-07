@@ -1,6 +1,6 @@
 {
   "extends": "next/core-web-vitals",
   "rules": {
-    "react/no-unknown-property": ["error", { "ignore": ["attach", "args"] }]
+    "react/no-unknown-property": ["error", { "ignore": ["attach", "args", "intensity"] }]
   }
 }
