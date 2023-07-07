@@ -79,7 +79,7 @@ const RefractSphere = () => {
           curveSegments={32}
           bevelSize={0.11}
           bevelThickness={0.1}
-          height={0.1}
+          height={0.01}
           size={1.8} 
           font="./fonts/hina.json" 
         >
@@ -96,7 +96,7 @@ const RefractSphere = () => {
           curveSegments={32}
           bevelSize={0.11}
           bevelThickness={0.1}
-          height={0.1}
+          height={0.01}
           size={1.8}  
           font="./fonts/hina.json" 
         >
